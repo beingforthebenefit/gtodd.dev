@@ -512,7 +512,7 @@ body:not(.user-is-tabbing) a:focus {
 .client__logos {
     display: flex;
     justify-content: space-between;
-    filter: opacity(.8);
+    flex-wrap: wrap;
 }
 
 .client__logo {
