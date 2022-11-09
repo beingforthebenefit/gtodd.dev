@@ -493,7 +493,7 @@ body:not(.user-is-tabbing) a:focus {
     margin-bottom: var(--gutter-normal);
 }
 
-.mobile__icon, .desktop__icon {
+.mobile__icon, .desktop__icon, .code__icon, .document__icon {
     filter: invert(1);
 }
 
