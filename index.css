@@ -465,6 +465,7 @@ body:not(.user-is-tabbing) a:focus {
 .work__links {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .work__text {
@@ -490,6 +491,10 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__image-box {
     margin-bottom: var(--gutter-normal);
+}
+
+.mobile__icon, .desktop__icon {
+    filter: invert(1);
 }
 
 @media(min-width: 901px) {
