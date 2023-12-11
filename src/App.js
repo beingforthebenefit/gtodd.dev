@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import {useEffect} from 'react';
+import AOS from 'aos';
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
