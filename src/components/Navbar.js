@@ -31,7 +31,7 @@ function Navbar() {
           <ul className="flex space-x-4">
               <li><a href="#about" className="hover:text-white">About</a></li>
               <li><a href="#devprojects" className="hover:text-white">Dev Projects</a></li>
-              <li><a href="#mathportfolio" className="hover:text-white">Math Portfolio</a></li>
+              <li><a href="#mathematical-journey" className="hover:text-white">Math Portfolio</a></li>
               <li><a href="#music" className="hover:text-white">Music</a></li>
               <li><a href="#contact" className="hover:text-white">Contact</a></li>
           </ul>
