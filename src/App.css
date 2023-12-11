@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Header.css */
 .shrink {
   background-color: rgba(17, 24, 39, 0.9);
