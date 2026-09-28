@@ -1,0 +1,27 @@
+{
+  "name": "gtodd.dev",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run check:copy && astro check && astro build && npm run pdf",
+    "preview": "astro preview",
+    "check:copy": "node scripts/check-copy.mjs",
+    "pdf": "node scripts/resume-pdf.mjs",
+    "shots": "node scripts/screenshots.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3",
+    "@fontsource-variable/schibsted-grotesk": "^5",
+    "@fontsource/stix-two-text": "^5",
+    "astro": "^7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9",
+    "playwright": "^1.63",
+    "typescript": "^5"
+  }
+}

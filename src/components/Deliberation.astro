@@ -1,0 +1,190 @@
+---
+// Two drawings of the same mechanism: left to right for wide screens,
+// top to bottom for phones, where the wide one would shrink past legibility.
+const label =
+  'How the deliberation works: the operator asks a question; the chair turns it into a brief with the stakes, values and confidence needed; the same brief goes to four sandboxed models from different providers; their drafts are merged into one document; every model votes; any no sends it back for another round, and only a unanimous yes returns the answer. Any model can raise its hand to ask the operator a question.';
+---
+
+<figure class="deliberation">
+  <svg class="deliberation__wide" viewBox="0 0 1248 400" role="img" aria-label={label}>
+    <defs>
+      <marker id="dw-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"></path></marker>
+      <marker id="dw-ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"></path></marker>
+    </defs>
+    <path d="M560 60 L560 30 L90 30 L90 156" fill="none" stroke="currentColor" stroke-width="1.3" stroke-dasharray="5 5" marker-end="url(#dw-ah)"></path>
+    <text x="325" y="22" font-size="13" text-anchor="middle" fill="currentColor">raised hand: a model asks the operator for more context</text>
+    <g fill="var(--paper)" stroke="currentColor" stroke-width="1.3">
+      <rect x="20" y="160" width="140" height="64" rx="6"></rect>
+      <rect x="230" y="116" width="190" height="152" rx="6"></rect>
+      <rect x="780" y="160" width="150" height="64" rx="6"></rect>
+      <rect x="990" y="140" width="120" height="104" rx="6"></rect>
+      <rect x="1170" y="160" width="68" height="64" rx="6"></rect>
+    </g>
+    <rect x="492" y="60" width="196" height="264" rx="10" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4"></rect>
+    <g fill="var(--paper)" stroke="currentColor" stroke-width="1.3">
+      <rect x="508" y="76" width="164" height="48" rx="6"></rect>
+      <rect x="508" y="138" width="164" height="48" rx="6"></rect>
+      <rect x="508" y="200" width="164" height="48" rx="6"></rect>
+      <rect x="508" y="262" width="164" height="48" rx="6"></rect>
+    </g>
+    <g font-size="15" font-weight="600" fill="currentColor" text-anchor="middle">
+      <text x="90" y="197">Operator</text>
+      <text x="325" y="142">Chair</text>
+      <text x="855" y="190">Chair</text>
+      <text x="1050" y="164">Vote</text>
+      <text x="1204" y="197">Answer</text>
+    </g>
+    <g font-size="13" fill="var(--ink-soft)" text-anchor="middle">
+      <text x="855" y="208">merges drafts</text>
+      <text x="575" y="347">sandboxed, one per provider</text>
+    </g>
+    <g font-size="13" fill="currentColor">
+      <text x="248" y="170" fill="var(--ink-soft)">writes the brief:</text>
+      <text x="248" y="192">the question</text>
+      <text x="248" y="212">what's at stake</text>
+      <text x="248" y="232">values that apply</text>
+      <text x="248" y="252">confidence needed</text>
+    </g>
+    <g font-size="14" fill="currentColor" text-anchor="middle">
+      <text x="590" y="105">Model A</text>
+      <text x="590" y="167">Model B</text>
+      <text x="590" y="229">Model C</text>
+      <text x="590" y="291">Model D</text>
+    </g>
+    <g class="math" font-size="20" text-anchor="middle" fill="currentColor">
+      <text x="1020" y="200">✓</text>
+      <text x="1080" y="200">✓</text>
+      <text x="1020" y="230" fill="var(--accent)">✗</text>
+      <text x="1080" y="230">✓</text>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="1.3" marker-end="url(#dw-ah)">
+      <path d="M160 192 L226 192"></path>
+      <path d="M420 192 L504 100"></path>
+      <path d="M420 192 L504 162"></path>
+      <path d="M420 192 L504 224"></path>
+      <path d="M420 192 L504 286"></path>
+      <path d="M672 100 L776 188"></path>
+      <path d="M672 162 L776 190"></path>
+      <path d="M672 224 L776 194"></path>
+      <path d="M672 286 L776 196"></path>
+      <path d="M930 192 L986 192"></path>
+      <path d="M1110 192 L1166 192"></path>
+    </g>
+    <g font-size="12" fill="var(--ink-soft)" text-anchor="middle">
+      <text x="193" y="184">question</text>
+      <text x="462" y="134">same brief</text>
+      <text x="726" y="134">drafts</text>
+      <text x="958" y="184">one doc</text>
+      <text x="1138" y="184">all yes</text>
+    </g>
+    <path d="M1050 244 L1050 380 L670 380 L670 330" fill="none" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#dw-ahr)"></path>
+    <text x="860" y="372" font-size="13" fill="var(--accent)" text-anchor="middle">any no: they deliberate again</text>
+  </svg>
+
+  <svg class="deliberation__tall" viewBox="0 0 360 780" role="img" aria-label={label}>
+    <defs>
+      <marker id="dt-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"></path></marker>
+      <marker id="dt-ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"></path></marker>
+    </defs>
+    <g fill="var(--paper)" stroke="currentColor" stroke-width="1.3">
+      <rect x="110" y="10" width="140" height="48" rx="6"></rect>
+      <rect x="60" y="96" width="240" height="140" rx="6"></rect>
+      <rect x="100" y="480" width="160" height="56" rx="6"></rect>
+      <rect x="120" y="576" width="120" height="96" rx="6"></rect>
+      <rect x="120" y="712" width="120" height="48" rx="6"></rect>
+    </g>
+    <rect x="40" y="276" width="280" height="140" rx="10" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4"></rect>
+    <g fill="var(--paper)" stroke="currentColor" stroke-width="1.3">
+      <rect x="56" y="292" width="116" height="44" rx="6"></rect>
+      <rect x="188" y="292" width="116" height="44" rx="6"></rect>
+      <rect x="56" y="352" width="116" height="44" rx="6"></rect>
+      <rect x="188" y="352" width="116" height="44" rx="6"></rect>
+    </g>
+    <g font-size="15" font-weight="600" fill="currentColor" text-anchor="middle">
+      <text x="180" y="39">Operator</text>
+      <text x="180" y="120">Chair</text>
+      <text x="180" y="504">Chair</text>
+      <text x="180" y="598">Vote</text>
+      <text x="180" y="741">Answer</text>
+    </g>
+    <g font-size="13" fill="currentColor" text-anchor="middle">
+      <text x="180" y="142" fill="var(--ink-soft)">writes the brief:</text>
+      <text x="180" y="164">the question</text>
+      <text x="180" y="184">what's at stake</text>
+      <text x="180" y="204">values that apply</text>
+      <text x="180" y="224">confidence needed</text>
+      <text x="114" y="319">Model A</text>
+      <text x="246" y="319">Model B</text>
+      <text x="114" y="379">Model C</text>
+      <text x="246" y="379">Model D</text>
+      <text x="180" y="524" fill="var(--ink-soft)">merges drafts</text>
+      <text x="180" y="434" fill="var(--ink-soft)">sandboxed, one per provider</text>
+    </g>
+    <g class="math" font-size="20" text-anchor="middle" fill="currentColor">
+      <text x="150" y="632">✓</text>
+      <text x="210" y="632">✓</text>
+      <text x="150" y="660" fill="var(--accent)">✗</text>
+      <text x="210" y="660">✓</text>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="1.3" marker-end="url(#dt-ah)">
+      <path d="M180 58 L180 92"></path>
+      <path d="M180 236 L180 272"></path>
+      <path d="M180 440 L180 476"></path>
+      <path d="M180 536 L180 572"></path>
+      <path d="M180 672 L180 708"></path>
+    </g>
+    <path d="M320 300 L344 300 L344 34 L254 34" fill="none" stroke="currentColor" stroke-width="1.3" stroke-dasharray="5 5" marker-end="url(#dt-ah)"></path>
+    <g font-size="12" fill="var(--ink-soft)">
+      <text x="190" y="80">question</text>
+      <text x="190" y="258">same brief</text>
+      <text x="190" y="462">drafts</text>
+      <text x="190" y="558">one doc</text>
+      <text x="190" y="694">all yes</text>
+      <text x="336" y="84" text-anchor="end">raised hand</text>
+    </g>
+    <path d="M120 624 L20 624 L20 346 L36 346" fill="none" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#dt-ahr)"></path>
+    <g font-size="12" fill="var(--accent)" text-anchor="middle">
+      <text x="70" y="604">any no:</text>
+      <text x="70" y="648">go again</text>
+    </g>
+  </svg>
+
+  <figcaption>One question, one brief, four models that never see each other. Nothing leaves until every vote is yes.</figcaption>
+</figure>
+
+<style>
+  .deliberation {
+    margin: 48px 0 0;
+    color: var(--ink);
+    font-family: var(--sans);
+  }
+
+  .deliberation svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .deliberation__tall {
+    display: none;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  figcaption {
+    margin-top: 14px;
+    max-width: 720px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  @media (max-width: 900px) {
+    .deliberation__wide {
+      display: none;
+    }
+
+    .deliberation__tall {
+      display: block;
+    }
+  }
+</style>

@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import { personSchema } from '../lib/schema';
+---
+
+<Base title="Not found, gtodd.dev" description="This page doesn't exist." schema={{ '@context': 'https://schema.org', ...personSchema() }} noindex>
+  <main id="main" class="section missing">
+    <p class="math">∄</p>
+    <h1>No such page.</h1>
+    <p>It may have existed on the old site. Everything worth keeping is on the <a href="/">home page</a> now.</p>
+  </main>
+</Base>
+
+<style>
+  .missing {
+    min-height: 80svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border-top: 0;
+  }
+
+  .math {
+    font-size: 96px;
+    line-height: 1;
+    color: var(--accent);
+  }
+
+  h1 {
+    font-size: clamp(40px, 6vw, 64px);
+    letter-spacing: -0.035em;
+  }
+</style>

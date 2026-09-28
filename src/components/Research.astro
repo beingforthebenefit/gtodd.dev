@@ -1,0 +1,128 @@
+---
+import { Image } from 'astro:assets';
+import talk from '../assets/talk.jpg';
+import { paper } from '../data/resume';
+---
+
+<section id="research" class="section research grid-12" aria-labelledby="research-title">
+  <figure class="research__photo">
+    <Image
+      class="photo"
+      src={talk}
+      widths={[480, 926]}
+      sizes="(max-width: 900px) calc(100vw - 40px), 45vw"
+      alt="Gerald presenting a talk titled Breaking Bad Symmetries, the title set in Breaking Bad's periodic-table style"
+    />
+    <figcaption class="meta">
+      Giving the talk at the Pacific Northwest Section meeting of the Mathematical Association of America, Oregon State
+      University, April 2016. It's talk 87 in the <a href={paper.programUrl}>program</a>.
+    </figcaption>
+  </figure>
+
+  <div class="research__text body-copy">
+    <h2 id="research-title">Breaking bad symmetries</h2>
+    <p>
+      My master's research, in plain terms. Draw a picture made of points and lines. A symmetry shuffles the points
+      without breaking any of the lines. The fixing number is how many points you have to pin down before the only
+      symmetry left is doing nothing at all.
+    </p>
+    <p>
+      I worked on the Dowling geometry, a picture that encodes a group's multiplication table. I counted every one of its
+      symmetries and found its fixing number.
+    </p>
+    <div class="theorem math">
+      <p>
+        <strong>Theorem</strong> <em>(Todd, 2016).</em> Let <em>G</em> be a finite group of order <em>n</em>, and
+        <em>Q<sub>r</sub></em>(<em>G</em>) its rank-<em>r</em> Dowling geometry, <em>r</em> ≥ 3. Then
+      </p>
+      <p class="theorem__result">
+        <span><em>|</em>Aut <em>Q<sub>r</sub></em>(<em>G</em>)<em>|</em> = <em>r</em>! <em>n</em>! <em>n</em><sup><em>r</em>−2</sup></span>
+        <span>fix <em>Q<sub>r</sub></em>(<em>G</em>) = <em>n</em> + <em>r</em> − 3</span>
+      </p>
+      <p class="theorem__note">The two main results of my paper, proved there in full.</p>
+    </div>
+    <p>
+      The surprise is what's missing. Neither answer depends on how the group is built, only on its size
+      <em class="math">n</em>.
+    </p>
+    <p>
+      My adviser was {paper.adviser}, who co-wrote the textbook on matroids. She's now the dean of arts and sciences at
+      the University of Alaska Anchorage, where I did my undergrad.
+      <a href={paper.url}>Read the paper (PDF)</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .research {
+    row-gap: 40px;
+    align-items: start;
+    border-top-color: var(--ink);
+  }
+
+  .research__photo {
+    grid-column: span 6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    line-height: 1.5;
+  }
+
+  .research__photo :global(.photo) {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  .research__text {
+    grid-column: 8 / span 5;
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  h2 {
+    font-size: clamp(34px, 4vw, 44px);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+
+  .theorem {
+    padding: 20px 24px;
+    border-left: 2px solid var(--accent);
+    background: var(--paper-deep);
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .theorem strong {
+    font-weight: 600;
+  }
+
+  .theorem__result {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    font-size: clamp(20px, 2.4vw, 24px);
+  }
+
+  .theorem__note {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  sup {
+    line-height: 0;
+  }
+
+  @media (max-width: 900px) {
+    .research__photo,
+    .research__text {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

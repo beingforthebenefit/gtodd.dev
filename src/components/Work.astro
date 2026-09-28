@@ -1,0 +1,97 @@
+---
+import Deliberation from './Deliberation.astro';
+---
+
+<section id="work" class="section work" aria-labelledby="work-title">
+  <h2 id="work-title" class="section-title">Work</h2>
+
+  <article class="item grid-12">
+    <div class="item__head">
+      <h3>A panel of AI agents that has to agree before you get an answer</h3>
+      <p class="meta">Einstein Industries. Designed and built alone.</p>
+    </div>
+    <div class="item__body body-copy">
+      <p>
+        It started with a problem in legal work: nobody trusts a single model's answer, and they shouldn't. So a chair
+        agent gathers the context around a question first. The stakes, the values in play, how confident the answer
+        needs to be. Then it briefs a panel of sandboxed models from different providers. They draft. The chair merges.
+        They vote, and one dissent sends it back for another round.
+      </p>
+      <p>Any agent can raise its hand and ask the operator a question. It's slow on purpose.</p>
+    </div>
+    <div class="item__figure"><Deliberation /></div>
+  </article>
+
+  <article class="item grid-12">
+    <div class="item__head">
+      <p class="item__figure-number math" aria-hidden="true">10×</p>
+      <h3><span class="visually-hidden">10× </span>throughput on client work, from one MCP server</h3>
+      <p class="meta">Einstein Industries. One of two developers.</p>
+    </div>
+    <div class="item__body body-copy">
+      <p>
+        Built on FastMCP. Its tools reach into every app in our suite, pull a client's whole history, and assemble a
+        working model of the finished product. People review it and push back instead of starting from a blank page.
+        Work that took other departments days of manual digging now starts from a draft. We measured before and after.
+      </p>
+    </div>
+  </article>
+
+  <article class="item grid-12">
+    <div class="item__head">
+      <h3>Retiring a login system from 2012</h3>
+      <p class="meta">Einstein Industries. Me and the sysadmin.</p>
+    </div>
+    <div class="item__body body-copy">
+      <p>Cognito with Google sign-in across the whole suite of applications.</p>
+    </div>
+  </article>
+
+</section>
+
+<style>
+  .item {
+    padding-block: 48px;
+    border-top: 1px solid var(--rule);
+    row-gap: 20px;
+    align-items: start;
+  }
+
+  .item__head {
+    grid-column: span 5;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .item__body {
+    grid-column: 7 / span 6;
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .item__figure {
+    grid-column: 1 / -1;
+  }
+
+  h3 {
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.12;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+  }
+
+  .item__figure-number {
+    font-size: 88px;
+    line-height: 0.9;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 900px) {
+    .item__head,
+    .item__body {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

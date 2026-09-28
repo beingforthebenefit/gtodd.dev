@@ -1,0 +1,49 @@
+---
+const facts = [
+  { figure: '2006', text: 'The year I started tutoring math.' },
+  { figure: '2 master’s', text: 'Combinatorics and analysis, earned at the same time.' },
+  { figure: '3 years', text: 'The VA Authority to Operate I led us to. The longest that app ever got.' },
+  { figure: '2 of 120', text: 'My Putnam score. The median is usually zero.' },
+];
+---
+
+<ul class="facts">
+  {
+    facts.map((f) => (
+      <li>
+        <span class="math">{f.figure}</span>
+        {f.text}
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .facts {
+    margin: 0 var(--gutter);
+    padding: 40px 0 44px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 40px;
+    border-top: 1px solid var(--ink);
+    background: var(--paper);
+    font-size: 16px;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+
+  .facts span {
+    display: block;
+    font-size: 30px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .facts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

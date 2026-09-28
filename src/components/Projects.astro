@@ -1,0 +1,243 @@
+---
+import { Image } from 'astro:assets';
+import gboard from '../assets/gboard-blueprint.jpg';
+import themer from '../assets/ios-themer.png';
+import wrench from '../assets/monkeewrench-vote.jpg';
+import band from '../assets/monkee-business.png';
+---
+
+<section id="projects" class="section projects" aria-labelledby="projects-title">
+  <div class="projects__head">
+    <h2 id="projects-title" class="section-title">On my own time</h2>
+    <a href="https://github.com/beingforthebenefit">All of it is on GitHub</a>
+  </div>
+
+  <figure class="project project--feature grid-12">
+    <Image
+      class="shot gboard"
+      src={gboard}
+      widths={[360, 597]}
+      sizes="(max-width: 900px) min(100vw - 40px, 420px), 420px"
+      alt="GBoard's Blueprint theme: the house drawn as an architect's sheet, with weather, indoor and outdoor temperature charts, upcoming TV, a Spanish word of the day and a family photo"
+    />
+    <figcaption>
+      <h3>GBoard</h3>
+      <div class="body-copy">
+        <p>
+          The screen on my wall, and my excuse to try every idea I have about ambient displays. Thirteen themes so far.
+          This one draws the house as an architect's sheet, with the weather and the thermostat plotted like survey
+          data. Another is a split-flap departures board where TV episodes and calendar events share one list.
+        </p>
+      </div>
+      <p class="meta">
+        TypeScript, React, Node, Docker, CI with coverage. Some panels are blurred here because they're personal.
+        <a href="https://github.com/beingforthebenefit/GBoard">Source</a>
+      </p>
+    </figcaption>
+  </figure>
+
+  <div class="grid-12 row">
+    <figure class="project themer">
+      <Image
+        class="shot"
+        src={themer}
+        widths={[480, 840, 1200]}
+        sizes="(max-width: 900px) calc(100vw - 40px), 55vw"
+        alt="The iOS Themer web app: an icon editor, a live phone preview and the steps to install the theme"
+      />
+      <figcaption>
+        <h3>iOS theming engine</h3>
+        <p class="body-copy">
+          Custom iPhone icons without a jailbreak, installed as a configuration profile. I turned it into an LLC, hired a
+          designer, and got beaten to market. Open source now.
+          <a href="https://github.com/beingforthebenefit/iOS-Themer">Source</a>
+        </p>
+      </figcaption>
+    </figure>
+    <figure class="project wrench">
+      <Image
+        class="shot"
+        src={wrench}
+        widths={[360, 757]}
+        sizes="(max-width: 900px) min(100vw - 40px, 420px), 30vw"
+        alt="MonkeeWrench's voting screen: song proposals with vote progress bars"
+      />
+      <figcaption>
+        <h3>MonkeeWrench</h3>
+        <p class="body-copy">Song requests, voting and setlists for my band. Next.js, Prisma, Postgres, Vitest.
+          <a href="https://github.com/beingforthebenefit/MonkeeWrench">Source</a>
+        </p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="grid-12 row">
+    <figure class="project homelab">
+      <svg
+        class="homelab__diagram"
+        viewBox="0 0 400 300"
+        role="img"
+        aria-label="Diagram of the homelab: an edge host routes traffic to a workhorse host running about forty containers, with a small DNS host beside them"
+      >
+        <g fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="30" y="40" width="130" height="70" rx="8"></rect>
+          <rect x="30" y="190" width="130" height="70" rx="8"></rect>
+          <rect x="220" y="40" width="150" height="220" rx="8"></rect>
+          <path d="M160 75 L220 75 M95 110 L95 190"></path>
+        </g>
+        <g fill="var(--accent)">
+          {
+            Array.from({ length: 34 }, (_, i) => (
+              <rect x={238 + (i % 6) * 20} y={96 + Math.floor(i / 6) * 20} width="14" height="14" rx="2" />
+            ))
+          }
+        </g>
+        <g font-size="14" fill="currentColor">
+          <text x="46" y="70">Edge</text>
+          <text x="46" y="90" fill="var(--muted)" font-size="12">routing</text>
+          <text x="46" y="220">DNS</text>
+          <text x="46" y="240" fill="var(--muted)" font-size="12">a very small box</text>
+          <text x="238" y="70">Workhorse</text>
+          <text x="238" y="238" fill="var(--muted)" font-size="12">~40 containers</text>
+        </g>
+      </svg>
+      <figcaption>
+        <h3>The homelab</h3>
+        <p class="body-copy">
+          Every change touches nine places, health checks and backups and the wiki included. The house rule: verify by
+          artifact, not by exit code. Almost every failure here has been something reporting success while doing
+          nothing.
+        </p>
+      </figcaption>
+    </figure>
+    <figure class="project band">
+      <Image
+        class="shot"
+        src={band}
+        widths={[480, 900, 1500]}
+        sizes="(max-width: 900px) calc(100vw - 40px), 55vw"
+        alt="The Monkee Business homepage: a teal sunburst, a hand-lettered logo and a vintage TV showing the band"
+      />
+      <figcaption>
+        <h3>Websites for bands</h3>
+        <p class="body-copy">
+          I play keyboards in two Bay Area tribute bands, and I build their sites. A tribute band should look like the
+          era it plays: <a href="https://monkeebusinessband.com">Monkee Business</a> is 1966 on a TV set, and on
+          <a href="https://darksideband.com">The Dark Side</a>, a Pink Floyd tribute, a beam of light crosses the page
+          and splits through the prism when it loads. No frameworks on either.
+        </p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(48px, 6vw, 72px);
+  }
+
+  .projects__head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px 24px;
+  }
+
+  .projects__head .section-title {
+    margin-bottom: 0;
+  }
+
+  .project {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .project figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  h3 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .row {
+    row-gap: 56px;
+    align-items: start;
+  }
+
+  .project--feature {
+    display: grid;
+    align-items: center;
+    row-gap: 28px;
+  }
+
+  .project--feature :global(.gboard) {
+    grid-column: 2 / span 4;
+  }
+
+  .project--feature figcaption {
+    grid-column: 7 / span 6;
+    gap: 18px;
+    font-size: 18px;
+  }
+
+  .project--feature h3 {
+    font-size: clamp(34px, 4vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  .themer {
+    grid-column: span 7;
+  }
+
+  .wrench {
+    grid-column: 9 / span 4;
+  }
+
+  .homelab {
+    grid-column: span 4;
+  }
+
+  .band {
+    grid-column: 6 / span 7;
+  }
+
+  .homelab__diagram {
+    width: 100%;
+    height: auto;
+    color: var(--ink);
+    background: var(--paper);
+    border-radius: 6px;
+    box-shadow: 0 0 0 1px var(--ink);
+  }
+
+  @media (max-width: 900px) {
+    .project--feature :global(.gboard),
+    .project--feature figcaption,
+    .themer,
+    .wrench,
+    .homelab,
+    .band {
+      grid-column: 1 / -1;
+    }
+
+    .project--feature :global(.gboard),
+    .wrench :global(img),
+    .homelab__diagram {
+      max-width: 420px;
+    }
+  }
+</style>
