@@ -1,6 +1,9 @@
 ---
 import '../styles/global.css';
 import { basics } from '../data/resume';
+// Preloading the body font means text is laid out once, in the right face,
+// instead of shifting when it arrives (Lighthouse caught this on /resume/).
+import sansFont from '@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2?url';
 
 interface Props {
   title: string;
@@ -20,6 +23,7 @@ const ogImage = new URL('/og/card.png', Astro.site);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
+    <link rel="preload" href={sansFont} as="font" type="font/woff2" crossorigin />
     <meta name="description" content={description} />
     <meta name="author" content={basics.name} />
     <meta name="theme-color" content="#f5f1e6" />
