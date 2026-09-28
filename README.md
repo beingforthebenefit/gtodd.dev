@@ -39,7 +39,7 @@ One-time setup:
 
 1. Repository **Settings → Pages → Source**: choose **GitHub Actions** (the old `gh-pages` branch is no longer used).
 2. Custom domain `gtodd.dev` stays as is; `public/CNAME` keeps it.
-3. Cloudflare Web Analytics: add the site in the Cloudflare dashboard, then save its token as a repository **variable** named `CF_BEACON_TOKEN` (Settings → Secrets and variables → Actions → Variables). Without it, no analytics script is added.
+3. Cloudflare Web Analytics is enabled in the Cloudflare dashboard with automatic setup. Because the domain is proxied through Cloudflare, the beacon is injected at the edge; the site's code doesn't include it, so visits aren't counted twice.
 4. `geraldtodd.com`: in Cloudflare, add a Redirect Rule for `geraldtodd.com` and `www.geraldtodd.com` that sends a 301 to `https://gtodd.dev/${uri.path}`, keeping the query string. The zone needs a proxied DNS record (an `AAAA` to `100::` works) for the rule to fire. Leave MX records alone.
 
 ## License

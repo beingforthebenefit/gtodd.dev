@@ -12,7 +12,6 @@ interface Props {
 const { title, description, schema, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL('/og/card.png', Astro.site);
-const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 ---
 
 <!doctype html>
@@ -51,14 +50,6 @@ const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <slot />
-    {
-      beaconToken && (
-        <script
-          defer
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon={JSON.stringify({ token: beaconToken })}
-        />
-      )
-    }
+    <!-- Cloudflare Web Analytics is injected at the edge (the site is proxied), not here. -->
   </body>
 </html>
